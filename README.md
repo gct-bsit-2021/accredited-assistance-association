@@ -73,44 +73,55 @@ Accredited Assistance Association (AAA) provides a comprehensive solution that b
 - **Session Security**: Secure session management with MongoDB storage
 - **CORS Protection**: Configured CORS for secure cross-origin requests
 
+## Screenshots
+
+### Platform Overview
+![Homepage](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/Homepage.png)
+
+### User Interfaces
+![Customer Login](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/customer%20login.png)
+![Customer Dashboard](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/customerdasbhoard.png)
+
+### Business Features
+![Business Dashboard](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/Bsuiness%20DAsbhoard.png)
+![Admin Dashboard](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/Admin%20Dashboard.png)
+
+### Service Discovery
+![Services Cards](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/Servicescards.png)
+
 ## Technology Stack
 
-### Backend Technologies
-- **Node.js**: JavaScript runtime for server-side development
-- **Express.js**: Web application framework for Node.js
-- **MongoDB**: NoSQL database for data storage
-- **Mongoose**: MongoDB object modeling for Node.js
-- **Passport.js**: Authentication middleware for Node.js
-- **JSON Web Tokens (JWT)**: Secure token-based authentication
-- **Socket.IO**: Real-time bidirectional event-based communication
-- **Nodemailer**: Email sending library for Node.js
-- **Helmet**: Security middleware for Express applications
-- **express-rate-limit**: Rate limiting middleware
-- **express-session**: Session management middleware
-- **connect-mongo**: MongoDB session store for Express
-
-### Frontend Technologies
-- **React 18**: Modern JavaScript library for building user interfaces
-- **React Router**: Declarative routing for React applications
-- **React Hook Form**: Performant forms with easy validation
-- **React Query**: Data fetching and caching library
-- **React Toastify**: Beautiful toast notifications
-- **Slick Carousel**: Responsive carousel component
-- **CSS3**: Modern styling with responsive design
-- **JavaScript ES6+**: Modern JavaScript features
-
-### Development & Deployment
-- **Create React App**: React application boilerplate
-- **Nodemon**: Development tool for Node.js applications
-- **GitHub Pages**: Static site hosting for frontend
-- **Environment Variables**: Secure configuration management
-- **PM2**: Process manager for production Node.js applications
-
-### Database & Storage
-- **MongoDB Atlas**: Cloud database service
-- **MongoDB Local**: Local development database
-- **GridFS**: File storage for images and documents
-- **MongoDB Sessions**: Session storage in database
+| Category | Technology | Description |
+|----------|------------|-------------|
+| **Backend** | Node.js | JavaScript runtime for server-side development |
+| | Express.js | Web application framework for Node.js |
+| | MongoDB | NoSQL database for data storage |
+| | Mongoose | MongoDB object modeling for Node.js |
+| | Passport.js | Authentication middleware for Node.js |
+| | JWT | Secure token-based authentication |
+| | Socket.IO | Real-time bidirectional event-based communication |
+| | Nodemailer | Email sending library for Node.js |
+| | Helmet | Security middleware for Express applications |
+| | express-rate-limit | Rate limiting middleware |
+| | express-session | Session management middleware |
+| | connect-mongo | MongoDB session store for Express |
+| **Frontend** | React 18 | Modern JavaScript library for building user interfaces |
+| | React Router | Declarative routing for React applications |
+| | React Hook Form | Performant forms with easy validation |
+| | React Query | Data fetching and caching library |
+| | React Toastify | Beautiful toast notifications |
+| | Slick Carousel | Responsive carousel component |
+| | CSS3 | Modern styling with responsive design |
+| | JavaScript ES6+ | Modern JavaScript features |
+| **Development** | Create React App | React application boilerplate |
+| | Nodemon | Development tool for Node.js applications |
+| | GitHub Pages | Static site hosting for frontend |
+| | Environment Variables | Secure configuration management |
+| | PM2 | Process manager for production Node.js applications |
+| **Database** | MongoDB Atlas | Cloud database service |
+| | MongoDB Local | Local development database |
+| | GridFS | File storage for images and documents |
+| | MongoDB Sessions | Session storage in database |
 
 ## Project Structure
 
@@ -326,5 +337,6 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 ---
 
-*Accredited Assistance Association (AAA) - Bridging the gap between service providers and customers in Pakistan through technology and innovation.*< ! - -   U p d a t e d   - - >  
+*Accredited Assistance Association (AAA) - Bridging the gap between service providers and customers in Pakistan through technology and innovation.*< ! - -   U p d a t e d   - - > 
+ 
  
