@@ -326,4 +326,5 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 ---
 
-*Accredited Assistance Association (AAA) - Bridging the gap between service providers and customers in Pakistan through technology and innovation.*
+*Accredited Assistance Association (AAA) - Bridging the gap between service providers and customers in Pakistan through technology and innovation.*< ! - -   U p d a t e d   - - >  
+ 
