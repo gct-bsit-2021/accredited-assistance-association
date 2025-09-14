@@ -71,7 +71,8 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Only ignore top-level public dir; keep Front End/public tracked
+/public
 
 # Storybook build outputs
 .out
