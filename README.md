@@ -1,218 +1,329 @@
-## AAA Services Directory
+# Accredited Assistance Association (AAA)
 
-Modern service marketplace to discover, review, and message local service providers. This monorepo contains a Node.js/Express API with MongoDB and real‑time messaging via Socket.IO, plus a React frontend built with Create React App.
+## Project Overview
 
-### Tech Stack
-- Backend: Node.js, Express, MongoDB (Mongoose), Passport, JSON Web Tokens, express-session, connect-mongo, Helmet, express-rate-limit, Nodemailer, Socket.IO
-- Frontend: React 18, React Router, React Hook Form, React Query, React Toastify, Slick Carousel
+**Accredited Assistance Association (AAA)** is a comprehensive digital marketplace platform designed specifically to address the service discovery and trust challenges in Pakistan's local business ecosystem. In Pakistan, most local service providers lack proper digital platforms to showcase their services, creating significant challenges for customers who struggle to find reliable and verified service providers in their local areas. Additionally, there's no centralized platform for customers to communicate directly with service providers, and the absence of transparent review and rating systems for local services makes it difficult to discover trustworthy services beyond immediate neighborhood knowledge.
 
-### Key Features
-- User and Business authentication (email/password, Google, Facebook)
-- Business profiles, categories, and search
-- Reviews and ratings
-- Complaints/help center and inquiry workflow (email notifications)
-- Real-time 1:1 messaging between customers and businesses (Socket.IO)
-- Admin dashboards for users, service providers, and complaints
-- Production-ready security defaults (Helmet CSP, sessions, rate limiting)
+Accredited Assistance Association (AAA) provides a comprehensive solution that bridges the gap between service providers and customers in Pakistan by offering easy service discovery through category and location browsing, access to verified and trustworthy service providers, transparent reviews and ratings from other customers, real-time messaging with service providers, and structured complaint management systems. For service providers, the platform offers a professional space to create detailed business profiles with service listings, direct communication with potential and existing customers, review management capabilities, business analytics to track inquiries and customer interactions, and increased visibility in the local service market.
 
----
+## Key Features
 
-## Monorepo Structure
+### Authentication & User Management
+- **Multi-Provider Authentication**: Email/password, Google OAuth, Facebook OAuth
+- **Role-Based Access**: Separate dashboards for customers, businesses, and administrators
+- **Secure Sessions**: JWT-based authentication with MongoDB session storage
+- **Password Management**: Forgot password and reset functionality with email verification
+
+### User Profiles & Business Management
+- **Customer Profiles**: Personal profiles with contact information and preferences
+- **Business Profiles**: Comprehensive business profiles with:
+  - Service categories and descriptions
+  - Contact information and business hours
+  - Professional photos and galleries
+  - Service area coverage
+  - Business verification status
+
+### Service Discovery & Search
+- **Category-Based Browsing**: Organized service categories for easy navigation
+- **Advanced Search**: Search by service type, location, and business name
+- **Service Provider Directory**: Comprehensive listing of all registered businesses
+- **Location-Based Results**: Find services in specific geographic areas
+
+### Reviews & Ratings System
+- **Customer Reviews**: Detailed review system with ratings (1-5 stars)
+- **Review Management**: Businesses can respond to reviews
+- **Review Moderation**: Admin oversight for review quality and authenticity
+- **Review Analytics**: Track review trends and customer satisfaction
+
+### Real-Time Messaging System
+- **Direct Communication**: 1:1 messaging between customers and businesses
+- **Real-Time Updates**: Socket.IO powered instant messaging
+- **Message Features**:
+  - Text messaging
+  - Typing indicators
+  - Message read receipts
+  - Message deletion
+  - Business room management
+- **Message History**: Persistent message storage and retrieval
+
+### Complaint & Inquiry Management
+- **Structured Complaints**: Formal complaint submission system
+- **Inquiry System**: General inquiry form for service information
+- **Email Notifications**: Automated email alerts for new complaints/inquiries
+- **Admin Dashboard**: Comprehensive complaint management interface
+- **Resolution Tracking**: Track complaint status and resolution progress
+
+### Admin Dashboard & Management
+- **User Management**: Admin control over user accounts and permissions
+- **Business Management**: Approve, modify, or remove business listings
+- **Complaint Management**: Review and manage customer complaints
+- **Service Category Management**: Add, edit, or remove service categories
+- **Analytics Dashboard**: Overview of platform usage and statistics
+
+### Email Services
+- **Automated Notifications**: Email alerts for various platform activities
+- **Password Reset**: Secure password reset via email
+- **Account Verification**: Email verification for new accounts
+- **Complaint Notifications**: Email alerts for complaint submissions
+
+### Security Features
+- **Rate Limiting**: API rate limiting to prevent abuse
+- **Helmet Security**: Security headers and CSP protection
+- **Input Validation**: Comprehensive input validation and sanitization
+- **Session Security**: Secure session management with MongoDB storage
+- **CORS Protection**: Configured CORS for secure cross-origin requests
+
+## Technology Stack
+
+### Backend Technologies
+- **Node.js**: JavaScript runtime for server-side development
+- **Express.js**: Web application framework for Node.js
+- **MongoDB**: NoSQL database for data storage
+- **Mongoose**: MongoDB object modeling for Node.js
+- **Passport.js**: Authentication middleware for Node.js
+- **JSON Web Tokens (JWT)**: Secure token-based authentication
+- **Socket.IO**: Real-time bidirectional event-based communication
+- **Nodemailer**: Email sending library for Node.js
+- **Helmet**: Security middleware for Express applications
+- **express-rate-limit**: Rate limiting middleware
+- **express-session**: Session management middleware
+- **connect-mongo**: MongoDB session store for Express
+
+### Frontend Technologies
+- **React 18**: Modern JavaScript library for building user interfaces
+- **React Router**: Declarative routing for React applications
+- **React Hook Form**: Performant forms with easy validation
+- **React Query**: Data fetching and caching library
+- **React Toastify**: Beautiful toast notifications
+- **Slick Carousel**: Responsive carousel component
+- **CSS3**: Modern styling with responsive design
+- **JavaScript ES6+**: Modern JavaScript features
+
+### Development & Deployment
+- **Create React App**: React application boilerplate
+- **Nodemon**: Development tool for Node.js applications
+- **GitHub Pages**: Static site hosting for frontend
+- **Environment Variables**: Secure configuration management
+- **PM2**: Process manager for production Node.js applications
+
+### Database & Storage
+- **MongoDB Atlas**: Cloud database service
+- **MongoDB Local**: Local development database
+- **GridFS**: File storage for images and documents
+- **MongoDB Sessions**: Session storage in database
+
+## Project Structure
 
 ```
-Back-End/
-  server/
-    config/           # Database, Passport strategies, etc.
-    middleware/       # Auth middleware
-    models/           # Mongoose models (User, Business, Review, etc.)
-    routes/           # REST API routes (auth, users, business, reviews, ...)
-    services/         # Email service
-    socket.js         # Socket.IO server and events
-    server.js         # Express app entrypoint
-
-Front End/
-  public/             # Static assets
-  src/                # React app
-    components/       # Reusable UI components
-    context/          # Auth and Socket providers
-    pages/            # Route-level pages
-    utils/            # Helpers
-  package.json        # CRA scripts
+Accredited-Assistant-Association/
+├── Back-End/
+│   └── server/
+│       ├── config/           # Database configuration, Passport strategies
+│       ├── middleware/       # Authentication middleware
+│       ├── models/           # Mongoose models (User, Business, Review, etc.)
+│       ├── routes/           # REST API routes
+│       │   ├── admin.js      # Admin management routes
+│       │   ├── auth.js       # Authentication routes
+│       │   ├── business.js   # Business management routes
+│       │   ├── complaints.js # Complaint handling routes
+│       │   ├── messaging.js  # Messaging system routes
+│       │   ├── review.js     # Review system routes
+│       │   └── users.js      # User management routes
+│       ├── services/         # Email service and utilities
+│       ├── socket.js         # Socket.IO server configuration
+│       └── server.js         # Express application entry point
+│
+└── Front End/
+    ├── public/               # Static assets and HTML template
+    └── src/
+        ├── components/       # Reusable UI components
+        │   ├── AdminComplaintsDashboard.js
+        │   ├── BusinessMessagingDashboard.js
+        │   ├── ChatWindow.js
+        │   ├── ComplaintForm.js
+        │   └── [Other components]
+        ├── context/          # React Context providers
+        │   ├── AuthContext.js
+        │   ├── SocketContext.js
+        │   └── AdminContext.js
+        ├── pages/            # Route-level page components
+        │   ├── Home.js
+        │   ├── BusinessDirectory.js
+        │   ├── AdminDashboard.js
+        │   └── [Other pages]
+        ├── utils/            # Utility functions and helpers
+        └── styles/           # CSS stylesheets
 ```
 
----
+## Getting Started
 
-## Prerequisites
-- Node.js >= 16 and npm >= 8
-- MongoDB (Local or Atlas)
-- Gmail account with App Password (for email) — optional but recommended
+### Quick Setup (Essentials Only)
 
----
-
-## Backend Setup (Server)
-
-All environment variables must be defined in the `.env` file inside `Back-End/server` only.
-
-1) Create `Back-End/server/.env` with the following keys:
-
-```env
-# Choose ONE connection; local takes precedence if both are set
-MONGO_URI_LOCAL=mongodb://localhost:27017/aaa_services
-MONGO_URI= # mongodb+srv://<user>:<pass>@<cluster>/<db>?retryWrites=true&w=majority
-
-# Security
-JWT_SECRET=change-me
-SESSION_KEY=change-me-too
-
-# Networking
-PORT=5000
-FRONTEND_URL=http://localhost:3000
-
-# OAuth (optional)
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-FACEBOOK_APP_ID=
-FACEBOOK_APP_SECRET=
-
-# Email (optional but used by help center and password reset)
-GMAIL_USER=your@gmail.com
-GMAIL_APP_PASSWORD=your-app-password
-
-NODE_ENV=development
-```
-
-2) Install dependencies and run (in two terminals):
-
+1) Backend
 ```bash
 cd Back-End/server
 npm install
-npm run dev    # starts API at http://localhost:5000
 ```
 
-Health checks:
-- GET `http://localhost:5000/` → API health payload
-- GET `http://localhost:5000/api/status` → DB/uptime status
+Create `Back-End/server/.env` with at least:
+```env
+MONGO_URI_LOCAL=mongodb://localhost:27017/aaa_services  # or use MONGO_URI for Atlas
+JWT_SECRET=<secure-random-string>
+SESSION_KEY=<secure-random-string>
+PORT=5000
+FRONTEND_URL=http://localhost:3000
+NODE_ENV=development
+```
 
-Notes:
-- A default super admin is initialized on first boot if none exists (see `Admin.initializeDefaultSuperAdmin()`).
-- Sessions are stored in MongoDB; cookie name: `aaa-services-session`.
-- CORS allows `FRONTEND_URL` and credentials by default.
+Run the API:
+```bash
+npm run dev
+```
 
----
-
-## Frontend Setup (React)
-
+2) Frontend
 ```bash
 cd "Front End"
 npm install
-npm start  # http://localhost:3000
+npm start
 ```
 
-The frontend assumes the API is available at `http://localhost:5000` during development and uses Socket.IO to connect there. If you change ports, update `FRONTEND_URL` in the backend `.env` and any hardcoded client URLs (for example, `SocketContext`).
+3) Database (MongoDB)
+- Local: install MongoDB and ensure it runs on port 27017, then use `MONGO_URI_LOCAL`.
+- Atlas: create a free cluster, add a DB user and IP whitelist, then set `MONGO_URI`.
 
-Build for production:
+Health checks:
+- API: http://localhost:5000/ and http://localhost:5000/api/status
+- App: http://localhost:3000
 
-```bash
-npm run build
-```
+## API Endpoints
 
-Optional GitHub Pages deploy (configured in `Front End/package.json`):
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user info
 
-```bash
-npm run predeploy
-npm run deploy
-```
+### User Management
+- `POST /api/users/register` - Register new user
+- `POST /api/users/login` - User login
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/profile` - Update user profile
+- `PUT /api/users/profile-picture` - Update profile picture
+- `PUT /api/users/change-password` - Change password
 
----
+### Business Management
+- `POST /api/business` - Create business profile
+- `GET /api/business` - Get all businesses
+- `GET /api/business/:id` - Get specific business
+- `PUT /api/business/:id` - Update business profile
+- `DELETE /api/business/:id` - Delete business
+- `GET /api/business/owner/my-business` - Get owner's business
 
-## Run Scripts
+### Reviews & Ratings
+- `POST /api/reviews` - Submit review
+- `GET /api/reviews` - Get reviews
 
-Backend (`Back-End/server/package.json`):
-- `npm run dev` → start API with nodemon on port 5000
-- `npm start` → start API with node
+### Service Categories
+- `GET /api/service-categories` - Get all categories
+- `POST /api/service-categories` - Create category
+- `PUT /api/service-categories/:id` - Update category
+- `DELETE /api/service-categories/:id` - Delete category
 
-Frontend (`Front End/package.json`):
-- `npm start` → start CRA dev server on port 3000
-- `npm run build` → production build to `Front End/build`
-- `npm run deploy` → deploy `build/` to GitHub Pages (requires repo setup)
+### Messaging System
+- Real-time messaging via Socket.IO
+- Events: `send-message`, `typing-start`, `typing-stop`, `mark-read`, `delete-message`
 
----
+### Complaints & Inquiries
+- `POST /api/complaints` - Submit complaint
+- `GET /api/complaints` - Get complaints
+- `POST /api/inquiry` - Submit inquiry
+- `GET /api/inquiry` - Get inquiries
 
-## REST API Overview
+## Security Features
 
-Base URL: `http://localhost:5000/api`
+- **Helmet.js**: Security headers and Content Security Policy
+- **Rate Limiting**: 1000 requests per 15 minutes (configurable)
+- **CORS Protection**: Configured for specific origins
+- **Session Security**: Secure session management with MongoDB storage
+- **Input Validation**: Comprehensive validation and sanitization
+- **JWT Authentication**: Secure token-based authentication
 
-- Auth: `POST /auth/register`, `POST /auth/login`, `GET /auth/me`
-- Users: `POST /users/register`, `POST /users/login`, `GET /users/profile`, `PUT /users/profile`, `PUT /users/profile-picture`, `PUT /users/change-password`, `GET /users/:id`
-- Business: `POST /business`, `GET /business`, `GET /business/:id`, `PUT /business/:id`, `DELETE /business/:id`, `GET /business/owner/my-business`
-- Reviews: `POST /reviews`, `GET /reviews`
-- Service Categories: `GET/POST/PUT/DELETE /service-categories` (see `routes/serviceCategories.js`)
-- Complaints: `... /complaints` (see `routes/complaints.js`)
-- Inquiry: `... /inquiry` (see `routes/inquiry.js`)
-- Messaging: `... /messaging` (see `routes/messaging.js`)
-- Help Center: `... /help-center` (see `routes/helpCenter.js`)
+## Real-Time Features
 
-Utility:
-- Health: `GET /`
-- API Status: `GET /api/status`
+### Socket.IO Implementation
+- **Real-time Messaging**: Instant message delivery
+- **Typing Indicators**: Show when users are typing
+- **Read Receipts**: Message read status tracking
+- **User Status**: Online/offline status updates
+- **Room Management**: Business-specific chat rooms
 
-Authentication & Sessions:
-- Uses sessions and JWT. Passport local strategy is enabled by default; Google/Facebook are available when OAuth env vars are provided.
+### Event Handling
+- **Client Events**: `send-message`, `typing-start`, `typing-stop`, `mark-read`
+- **Server Events**: `message-sent`, `new-message`, `user-typing`, `message-read`
 
----
+## Design Philosophy
 
-## Real‑Time Messaging (Socket.IO)
+- **Mobile-First**: Responsive design optimized for mobile devices
+- **Professional UI**: Clean, business-focused interface design
+- **Consistent Branding**: Green color scheme throughout the platform
+- **User Experience**: Intuitive navigation and user-friendly interactions
+- **Accessibility**: Accessible design principles implementation
 
-Server: Socket.IO is initialized in `Back-End/server/socket.js` and attached in `server.js`. Authentication uses the JWT (`Authorization: Bearer <token>` or `auth.token`).
+## Deployment
 
-Client: The `SocketProvider` connects to `http://localhost:5000` once the user is authenticated and exposes helpers such as `sendMessage`, `startTyping`, `stopTyping`, `markMessageAsRead`, `joinBusinessRoom`, and `deleteMessage`.
-
-Events (selected):
-- Emit: `send-message`, `typing-start`, `typing-stop`, `mark-read`, `delete-message`, `join-business`
-- Receive: `message-sent`, `new-message`, `business-message`, `user-typing`, `user-stopped-typing`, `message-read`, `message-deleted`, `user-status-change`
-
-Ensure `FRONTEND_URL` in backend `.env` matches your frontend origin for CORS and Socket.IO.
-
----
-
-## Design & Routing Conventions
-- Professional, business-first UI; consistent green color accents throughout.
-- Prefer SEO-friendly slugs in URLs for business pages instead of numeric IDs.
-- Optimize layouts for mobile-first experiences.
-
----
-
-## Deployment Notes
-
-Backend (Node/Express):
+### Backend Deployment
 - Set `NODE_ENV=production`
-- Provide `MONGO_URI` (Atlas recommended), `JWT_SECRET`, `SESSION_KEY`, and `FRONTEND_URL` for your deployed frontend domain
-- Run with a process manager (e.g., PM2) or host-provided runner
+- Configure production MongoDB Atlas connection
+- Set secure JWT and session secrets
+- Use PM2 or similar process manager
+- Configure production domain in `FRONTEND_URL`
 
-Frontend (Static):
+### Frontend Deployment
 - Build with `npm run build`
-- Serve the `build/` directory from your static host (GitHub Pages supported via `npm run deploy`)
-
-Security:
-- Helmet CSP is enabled; adjust directives if you serve third‑party scripts/styles
-- Rate limiting defaults to 1000 req/15 min (increase/decrease per environment)
-
----
+- Deploy `build/` directory to static hosting
+- GitHub Pages deployment supported
+- Configure production API endpoints
 
 ## Troubleshooting
-- API exits immediately: check required env vars (`MONGO_URI or MONGO_URI_LOCAL`, `JWT_SECRET`, `SESSION_KEY`).
-- CORS/Socket errors: verify `FRONTEND_URL` matches your frontend origin and that both run on expected ports (3000/5000).
-- Mongo connection issues: ensure local MongoDB is running on 27017 or verify Atlas connection string.
-- Emails not sending: configure `GMAIL_USER` and `GMAIL_APP_PASSWORD` (Gmail App Password, not account password).
 
----
+### Common Issues
+- **API Connection Issues**: Verify `FRONTEND_URL` matches frontend origin
+- **Database Connection**: Check MongoDB connection string and network access
+- **Email Not Working**: Verify Gmail App Password configuration
+- **Socket.IO Errors**: Ensure CORS configuration matches frontend URL
+- **Authentication Issues**: Check JWT secret and session configuration
+
+### Health Checks
+- `GET /` - API health status
+- `GET /api/status` - Database and uptime status
 
 ## Contributing
-Pull requests are welcome. For large changes, open an issue to discuss what you would like to change.
+
+We welcome contributions to improve AAA Services Directory! Please follow these guidelines:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+For major changes, please open an issue first to discuss the proposed changes.
+
+## License
+
+This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+**BS IT Group # 08**
+
+**Group Members:**
+- **Ahsan Fareed** - Email: [mailtoahsanfareed@gmail.com](mailto:mailtoahsanfareed@gmail.com)
+- **Ali Haider**
+- **Muhammad Ali**
+
+**Project:** Accredited Assistance Association (AAA)  
+**Role:** Full-Stack Development Team
 
 ---
 
-## License
-ISC
-
-
+*Accredited Assistance Association (AAA) - Bridging the gap between service providers and customers in Pakistan through technology and innovation.*
