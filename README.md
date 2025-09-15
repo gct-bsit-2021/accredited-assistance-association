@@ -331,7 +331,7 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 **BS IT Group # 08**
 
 **Group Members:**
-- **Ahsan Fareed** - Email: [mailtoahsanfareed@gmail.com](mailto:mailtoahsanfareed@gmail.com)
+- **Ahsan Fareed** - Email: [mailtoahsanfareed@gmail.com](mailto:mailtoahsanfareed@gmail.com) | [Github](https://github.com/ahsanfareed1) | [Upwork](https://www.upwork.com/freelancers/~01a9c1ff2d8b67a995)
 - **Ali Haider**
 - **Muhammad Ali**
 
@@ -341,4 +341,5 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 ---
 
 *Accredited Assistance Association (AAA) - Bridging the gap between service providers and customers in Pakistan through technology and innovation.*<
+
 
