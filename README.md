@@ -78,12 +78,15 @@ Accredited Assistance Association (AAA) provides a comprehensive solution that b
 ### Platform Overview
 ![Homepage](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/Homepage.png)
 
-### User Interfaces
+### Customer Login
 ![Customer Login](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/customer%20login.png)
+### Customer Dasbhoard
 ![Customer Dashboard](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/customerdasbhoard.png)
 
-### Business Features
+### Business Dashboard
 ![Business Dashboard](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/Bsuiness%20DAsbhoard.png)
+
+### Admin Dashboard
 ![Admin Dashboard](https://github.com/gct-bsit-2021/accredited-assistance-association/blob/main/Front%20End/public/Admin%20Dashboard.png)
 
 ### Service Discovery
@@ -338,3 +341,4 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 ---
 
 *Accredited Assistance Association (AAA) - Bridging the gap between service providers and customers in Pakistan through technology and innovation.*<
+
